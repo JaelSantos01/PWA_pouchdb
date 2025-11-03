@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PouchDB - Gestión de Tareas</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Manifest PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2196f3">
+
+    <!-- Ícono para instalar -->
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+</head>
+<body>
+    <h1>Gestión de Tareas</h1>
+
+    <fieldset>
+        <legend>Agregar Tarea</legend>
+        <p>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" placeholder="Ej. Comprar pan" required>
+        </p>
+        <p>
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha">
+        </p>
+        <p>
+            <button id="btnAdd">Agregar Tarea</button>
+        </p>
+    </fieldset>
+
+    <button id="btnList">Listar Tareas</button>
+
+    <ul id="listaTareas"></ul>
+
+    <script src="https://cdn.jsdelivr.net/npm/pouchdb@9.0.0/dist/pouchdb.min.js"></script>
+    <script src="main.js"></script>
+
+    <script>
+        // Registro del Service Worker (para PWA)
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js')
+            .then(() => console.log('✅ Service Worker registrado'))
+            .catch(err => console.error('Error al registrar SW:', err));
+        }
+    </script>
+</body>
+</html>
+
+
+<!-- Tareas a realizar:
+
+# Convertir a PWA
+# Diseño enfocado a movil
+# Implementar only cache
+# Subir a Git Hub
+# Instalada en el dispositivo
+
+Agregar
+# Estatus (donde tiene que haber un cambio de estado al seleccionar la tarea) -->
