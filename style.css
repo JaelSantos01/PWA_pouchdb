@@ -15,8 +15,8 @@ fieldset {
     border-radius: 10px;
     border: 1px solid #ccc;
     padding: 1rem;
-    max-width: 400px;
-    margin: auto;
+    max-width: 720px;
+    margin: 0.5rem auto;
 }
 
 label {
@@ -49,7 +49,7 @@ button:hover {
     list-style: none;
     padding: 0;
     margin-top: 1rem;
-    max-width: 400px;
+    max-width: 720px;
     margin: 1rem auto;
 }
 
@@ -61,9 +61,62 @@ button:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: .5rem;
 }
 
 .completada {
     text-decoration: line-through;
     color: gray;
+}
+
+/* Contenedor general para mejor control de ancho y padding */
+.container {
+    padding: 0 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Botones juntos en pantallas grandes */
+.controls {
+    display: flex;
+    gap: .5rem;
+}
+
+/* Mejora visual para inputs y legend */
+legend {
+    font-size: 1.1rem;
+    padding: 0 0.2rem;
+}
+
+/* Estados y pequeños detalles */
+.tarea .meta {
+    font-size: .9rem;
+    color: #555;
+}
+
+/* Media queries: en pantallas >= 600px mostramos botón de 'Agregar' y 'Listar' en línea */
+@media (min-width: 600px) {
+    fieldset {
+        display: flex;
+        gap: 1rem;
+        align-items: end;
+    }
+
+    fieldset p {
+        margin: 0;
+        flex: 1 1 auto;
+    }
+
+    button {
+        width: auto;
+    }
+
+    .controls {
+        justify-content: center;
+    }
+}
+
+/* Limpieza visual para impresión y accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
 }
