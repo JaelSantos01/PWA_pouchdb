@@ -19,10 +19,9 @@ btnAdd.addEventListener('click', () => {
 
     db.put(tarea)
         .then(() => {
-            // Limpiar campos, pero NO refrescar la lista automáticamente.
-            // La lista sólo debe mostrarse cuando el usuario pulse "Listar Tareas".
             inputName.value = '';
             inputFecha.value = '';
+            listarTareas();
         })
         .catch(console.error);
 });
